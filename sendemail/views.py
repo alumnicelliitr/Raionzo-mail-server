@@ -7,12 +7,10 @@ from django.conf import settings
 import json
 
 def emailView(request):
-    if(request == None):
-        return
-    x = json.loads(HttpRequest.read(request))
     if request.method == 'GET':
-        return
+        return HttpResponse('Make a post request')
     else:
+        x = json.loads(HttpRequest.read(request))
         settings.EMAIL_HOST_PASSWORD='raionzo@25'
         settings.EMAIL_HOST_USER = 'raionzouser@gmail.com'
         name = x['data']['Name']
