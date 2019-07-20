@@ -7,6 +7,8 @@ from django.conf import settings
 import json
 
 def emailView(request):
+    if(request == None):
+        return
     x = json.loads(HttpRequest.read(request))
     if request.method == 'GET':
         return
